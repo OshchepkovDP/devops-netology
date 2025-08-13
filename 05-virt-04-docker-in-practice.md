@@ -1,15 +1,15 @@
-*Домашнее задание к занятию 5. «Практическое применение Docker»*
+# Домашнее задание к занятию 5. «Практическое применение Docker»
 
-**Инструкция к выполнению**
+## Инструкция к выполнению
 
 Для выполнения заданий обязательно ознакомьтесь с инструкцией по экономии облачных ресурсов. Это нужно, чтобы не расходовать средства, полученные в результате использования промокода.
 Своё решение к задачам оформите в вашем GitHub репозитории.
 В личном кабинете отправьте на проверку ссылку на .md-файл в вашем репозитории.
 Сопроводите ответ необходимыми скриншотами.
 
-*Примечание: Ознакомьтесь со схемой виртуального стенда по ссылке*
+## Примечание: Ознакомьтесь со схемой виртуального стенда по ссылке
 
-**Задача 0**
+## Задача 0
 
 Убедитесь что у вас НЕ(!) установлен docker-compose, для этого получите следующую ошибку от команды docker-compose --version
 Command 'docker-compose' not found, but can be installed with:
@@ -24,12 +24,12 @@ See 'snap info docker' for additional versions.
 В случае наличия установленного в системе docker-compose - удалите его
 2. Убедитесь что у вас УСТАНОВЛЕН docker compose(без тире) версии не менее v2.24.X, для это выполните команду docker compose version
 
-*Своё решение к задачам оформите в вашем GitHub репозитории!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*
+## Своё решение к задачам оформите в вашем GitHub репозитории!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*
 
-**Ответ**
+## Ответ
 ![docker-compose--version.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/docker-compose--version.jpg)
 
-**Задача 1**
+## Задача 1
 
 Сделайте в своем GitHub пространстве fork репозитория.
 
@@ -47,23 +47,23 @@ See 'snap info docker' for additional versions.
 ВНИМАНИЕ!
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: Dockerfile.python, compose.yaml, .gitignore, .dockerignore,bash-скрипт. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
 
-**Ответ**
+## Ответ
 [fork_репозитория](https://github.com/OshchepkovDP/shvirtd-example-python)
 [Dockerfile.python](https://github.com/OshchepkovDP/shvirtd-example-python/blob/main/Dockerfile.python)
 [.dockerignore](https://github.com/OshchepkovDP/shvirtd-example-python/blob/main/.dockerignore)
 
-**Задача 2 (*)**
+## Задача 2 (*)
 Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . Инструкция
 Настройте аутентификацию вашего локального docker в yandex container registry.
 Соберите и залейте в него образ с python приложением из задания №1.
 Просканируйте образ на уязвимости.
 В качестве ответа приложите отчет сканирования.
 
-**Ответ**
+## Ответ
 ![yc_fork.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/yc_fork.jpg)
 ![scan_report.json](https://github.com/OshchepkovDP/shvirtd-example-python/blob/main/scan_report.json)
 
-**Задача 3**
+## Задача 3
 Изучите файл "proxy.yaml"
 Создайте в репозитории с проектом файл compose.yaml. С помощью директивы "include" подключите к нему файл "proxy.yaml".
 Опишите в файле compose.yaml следующие сервисы:
@@ -78,14 +78,15 @@ db. image=mysql:8. Контейнер должен работать в bridge-с
 Остановите проект. В качестве ответа приложите скриншот sql-запроса.
 ![sql-comand.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/sql-comand.jpg)
 
-**Задача 4**
+## Задача 4
 Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
 Подключитесь к Вм по ssh и установите docker.
 Напишите bash-скрипт, который скачает ваш fork-репозиторий в каталог /opt и запустит проект целиком.
 Зайдите на сайт проверки http подключений, например(или аналогичный): https://check-host.net/check-http и запустите проверку вашего сервиса http://<внешний_IP-адрес_вашей_ВМ>:8090. Таким образом трафик будет направлен в ingress-proxy. Трафик должен пройти через цепочки: Пользователь → Internet → Nginx → HAProxy → FastAPI(запись в БД) → HAProxy → Nginx → Internet → Пользователь
 (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения docker ps -a
 Повторите SQL-запрос на сервере и приложите скриншот и ссылку на fork.
-**Ответ:**
+
+##Ответ:
 [fork_yazndex-cloud](https://console.yandex.cloud/folders/b1g2426oq802iot2pt34/container-registry/registries/crpg11md2m361m0i9bog/overview/shvirtd-example-python/image)
 ![SQL_yandex_cloud.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/SQL_yandex_cloud.jpg)
 ![check-host.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/check-host.jpg)
@@ -96,29 +97,31 @@ db. image=mysql:8. Контейнер должен работать в bridge-с
 Протестируйте ручной запуск
 Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
 Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
-#пропустил это задание
+**пропустил это задание**
 
 
-Задача 6
+## Задача 6
 Скачайте docker образ hashicorp/terraform:latest и скопируйте бинарный файл /bin/terraform на свою локальную машину, используя dive и docker save. Предоставьте скриншоты действий .
-**Ответ:**
+
+##Ответ:
 ![interface dive.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/interface%20dive.jpg)
 ![docker_pull_hashicorp.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/docker_pull_hashicorp.jpg)
 ![copy_terraform_localhost.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/copy_terraform_localhost.jpg)
 
-Задача 6.1
+## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.
 Предоставьте скриншоты действий .
-**Ответ:**
+
+## Ответ:
 ![docker_cp_terraform_localhost.jpg](https://github.com/OshchepkovDP/devops-netology/blob/main/img/shvirtd-example-python/docker_cp_terraform_localhost.jpg)
 
 
-Задача 6.2 (**)
+## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.
 Предоставьте скриншоты действий .
-#пропустил это задание
+**пропустил это задание**
 
-Задача 7 (***)
+## Задача 7 (***)
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.
 Предоставьте скриншоты действий .
-#пропустил это задание
+**пропустил это задание**
